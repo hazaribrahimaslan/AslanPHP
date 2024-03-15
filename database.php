@@ -1,11 +1,11 @@
 <?php
-/* AslanPHP - Database Functions
- * Connect : $connect = $database->database_connect($server_name, $database_name,$user_name, $user_password);
- * Disconnect : $connect = $database->database_disconnect();
- * Select : $database->data_select($connect, $query);
- * Insert : $database->data_insert($connect, $table, $columns, $values);
- * Update : $database->data_update($connect,$table,$colum,$value,$condition);
- * Delete : $database->data_delete($connect,$table,$condition);
+/* AslanPHP - Veri Tabanı Fonksiyonları
+ * Bağlan : $connect = $database->database_connect($server_name, $database_name,$user_name, $user_password);
+ * Bağlantıyı kes : $connect = $database->database_disconnect();
+ * Veri listele : $database->data_select($connect, $query);
+ * Veri ekle : $database->data_insert($connect, $table, $columns, $values);
+ * Veri güncelle : $database->data_update($connect,$table,$colum,$value,$condition);
+ * Veri sil : $database->data_delete($connect,$table,$condition);
  * */
 class database{
     public function database_connect($server_name,$database_name,$user_name,$user_password){
