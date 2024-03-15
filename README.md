@@ -1,7 +1,16 @@
 # AslanPHP
-Açık kaynak kodlu php kütüphanesi.
+Open source php framework.
 
-## Veri Tabanı Fonksiyonları
-## Dosya Fonksiyonları
-## Takvim Fonksiyonları
-## Saat Fonksiyonları
+## Database Functions
+- Connect
+- Disconnect
+- Select
+- Insert
+- Update
+- Delete
+
+## Calendar Functions
+- Day name
+- Today name
+- Month name
+- This month name
