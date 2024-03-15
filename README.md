@@ -1,5 +1,5 @@
 # AslanPHP
-Open source php framework. Created by İbrahim Aslan.
+Open source php framework.
 
 ## Database Functions
 - Connect
