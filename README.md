@@ -1,5 +1,5 @@
 # AslanPHP
-Açık kaynak kodlu php kütüphanesi
+Açık kaynak kodlu php kütüphanesi.
 
 ## Veri Tabanı Fonksiyonları
 ## Dosya Fonksiyonları
