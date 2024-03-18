@@ -5,50 +5,66 @@ Open source php framework.
 <table>
   <tr>
     <td>Include </td>
-    <td>include "aslanphp/database.php";</td>
+    <td>include "aslan.php";</td>
   </tr>
    <tr>
-    <td>Class</td>
-    <td>$database = new database();</td>
+    <td>Using</td>
+    <td>$aslan = new aslan();</td>
   </tr>
   <tr>
     <td>Connect</td>
-    <td>$connect = $database->database_connect($server_name, $database_name,$user_name, $user_password);</td>
+    <td>$connect = $aslan->database_connect($server_name, $database_name,$user_name, $user_password);</td>
   </tr>
   <tr>
     <td>Disconnect</td>
-    <td>$connect = $database->database_disconnect();</td>
+    <td>$connect = $aslan->database_disconnect();</td>
   </tr>
   <tr>
     <td>Data Select</td>
-    <td>$select = $database->data_select($connect, $query);</td>
+    <td>$select = $aslan->data_select($connect, $query);</td>
   </tr>
   <tr>
     <td>Data Insert</td>
-    <td>$database->data_insert($connect, $table, $columns, $values);</td>
+    <td>$aslan->data_insert($connect, $table, $columns, $values);</td>
   </tr>
   <tr>
     <td>Data Update</td>
-    <td>$database->data_update($connect,$table,$colum,$value,$condition);</td>
+    <td>$aslan->data_update($connect,$table,$colum,$value,$condition);</td>
   </tr>
   <tr>
     <td>Data Delete</td>
-    <td>$database->data_delete($connect,$table,$condition);</td>
-  </tr>
-</table>
-
-## Calendar Functions
-<table>
-  <tr>
-    <td>Today Name</td>
-    <td>$today_name = $calendar->today_name();</td>
+    <td>$aslan->data_delete($connect,$table,$condition);</td>
   </tr>
   <tr>
-    <td>Month Name</td>
-    <td>$month_name = $calendar->month_name($month_number);</td>
+    <td>Form Create</td>
+    <td>$aslan->form_create($method,$action);</td>
   </tr>
   <tr>
-    <td>This Month Name</td>
-    <td>$month_name = $calendar->this_month_name();</td>
+    <td>Text Input</td>
+    <td>$aslan->form_input_text();</td>
+  </tr>
+  <tr>
+    <td>Email Input</td>
+    <td>$aslan->form_input_email();</td>
+  </tr>
+  <tr>
+    <td>Phone Number Input</td>
+    <td>$aslan->form_input_phone();</td>
+  </tr>
+  <tr>
+    <td>Password Input</td>
+    <td>$aslan->form_input_password();</td>
+  </tr>
+  <tr>
+    <td>File Input</td>
+    <td>$aslan->form_input_file($file_type,$file_size);</td>
+  </tr>
+  <tr>
+    <td>File Button</td>
+    <td>$aslan->form_input_button($button_text);</td>
+  </tr>
+  <tr>
+    <td>Form Close</td>
+    <td>$aslan->form_close();</td>
   </tr>
 </table>
