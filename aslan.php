@@ -43,6 +43,26 @@ class aslan{
             return $e->getMessage();
         }
     }
+    /* Data Encrypt & Decrypt */
+    public function data_encrypt_no_decoded($value, $md5_or_sha1_or_all){
+        if($md5_or_sha1_or_all == 32){
+            return md5($value);
+        }
+        else if($md5_or_sha1_or_all == 40){
+            return sha1($value);
+        }
+        else if($md5_or_sha1_or_all == 72){
+            return md5($value).sha1($value);
+        }
+    }
+    public function data_encrypt($data, $key){
+        $cipher = 'AES-128-ECB';
+        return openssl_encrypt($data, $cipher, $key);
+    }
+    public function data_decrypt($data, $key){
+        $cipher = 'AES-128-ECB';
+        return openssl_decrypt($data, $cipher, $key);
+    }
     /* Time Functions */
     public function day_name(){
         $day_names = array(
@@ -58,18 +78,18 @@ class aslan{
     }
     public function month_name($month_number){
         $month_names = array(
-            "01" => "Ocak",
-            "02" => "Şubat",
-            "03" => "Mart",
-            "04" => "Nisan",
-            "05" => "Mayıs",
-            "06" => "Haziran",
-            "07" => "Temmuz",
-            "08" => "Ağustos",
-            "09" => "Eylül",
-            "10" => "Ekim",
-            "11" => "Kasım",
-            "12" => "Aralık"
+            "01" => "January",
+            "02" => "February",
+            "03" => "March",
+            "04" => "April",
+            "05" => "May",
+            "06" => "June",
+            "07" => "July",
+            "08" => "August",
+            "09" => "September",
+            "10" => "October",
+            "11" => "November",
+            "12" => "December"
         );
         if($month_number == 0){
             return $month_names[date("m")];
@@ -78,28 +98,40 @@ class aslan{
         }
 
     }
+    /* HTML Elements */
+    public function page_create($language, $icon, $title){
+        return "<html lang=\"$language\"><head><meta charset=\"UTF-8\"><link rel=\"icon\" type=\"image/x-icon\" href=\"$icon\"><title>$title</title><link rel=\"stylesheet\" href=\"aslan.css\"><script src=\"jquery.js\"></script><script src=\"aslan.js\"></script></head><body><main>";
+    }
+    public function page_close(){
+        return "</main></body></html>";
+    }
+    /* HTML Navigation Elements */
+    public function navigation_create($title,$items){
+        return "<header><a href=\"\" onclick=\"open_navigation();\">$title</a></header><nav>$items</nav>";
+    }
     /* HTML Table Elements */
     public function create_table(){
         return "<table>";
     }
-    public function create_column($columns){
+    public function table_column_create($columns){
         for($i=0;$i<count($columns);$i++){
             $column .= "<th>".$columns[$i]["name"]."</th>";
         }
         return "<tr>$column</tr>";
     }
-    public function create_row($columns, $rows){
+    public function table_row_create($columns, $rows){
         $count_column = count($columns);
         $count_row = count($rows);
-        $row = "<tr>";
         for($i=0;$i<$count_row;$i++){
+            $row .= "<tr>";
             for($j=0;$j<$count_column;$j++){
                 $row .= "<td>".$columns[$j]["name"]."</td>";
             }
+            $row .= "</tr>";
         }
-        $row .= "</tr>";
+        return $row;
     }
-    public function close_table(){
+    public function table_close(){
         return "</table>";
     }
     /* HTML Form Elements */
@@ -109,22 +141,22 @@ class aslan{
     public function form_close(){
         return "</form>";
     }
-    public function input_text($name,$placeholder){
+    public function form_input_text_create($name,$placeholder){
         return "<input id=\"text\" name=\"$name\" type=\"text\" placeholder=\"$placeholder\">";
     }
-    public function input_phone($name,$placeholder){
+    public function form_input_phone_create($name,$placeholder){
         return "<input id=\"phone\" name=\"$name\" type=\"text\" placeholder=\"$placeholder\">";
     }
-    public function input_email($name,$placeholder){
+    public function form_input_email_create($name,$placeholder){
         return "<input id=\"email\" name=\"$name\" type=\"text\" placeholder=\"$placeholder\">";
     }
-    public function input_select($name,$placeholder,$options){
+    public function form_input_select_create($name,$placeholder,$options){
         for($i=0;$i<count($options);$i++){
             $option .= "<option value=\"".$options[$i]['key']."\">".$options[$i]['value']."</option>";
         }
         return "<select name=\"\"></select>";
     }
-    public function input_file($name,$placeholder){
+    public function form_input_file_create($name,$placeholder){
         return "<input id=\"file\" name=\"$name\" type=\"file\">";
     }
 }
