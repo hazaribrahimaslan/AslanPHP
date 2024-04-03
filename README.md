@@ -68,3 +68,16 @@ Open source php framework.
     <td>$aslan->form_close();</td>
   </tr>
 </table>
+#Table Functions
+<table>
+  <tr>
+    <td>Table create<\td>
+    <td>table_create($id)</td>
+  </tr>
+  <tr>
+<td>table_column_create(array("column1","column2"))</td>
+  </tr>
+  <tr><td>table_row_create(array("data1","data2")</td>
+  </tr>
+</table>
+#Form Functions
