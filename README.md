@@ -1,6 +1,16 @@
 # AslanPHP
 Open source php framework.
 
+# Folders and Files
+- /actions
+- /sources
+- - aslan.php
+- - aslan.css
+- - aslan.js
+- /views
+- - index.php
+- index.php
+
 # Features
 <ul>
   <li>Php programming with SVA design pattern.</li>
@@ -14,6 +24,6 @@ Open source php framework.
 </ul>
 
 # SVA Design Pattern
-<p>S : Sources : AslanPHP Framework + Stylesheets + Scripts + Other Sources</p>
+<p>S : Sources : AslanPHP Framework + Stylesheets + Scripts + Fonts + Other Sources</p>
 <p>V : Views : User Interface</p>
 <p>A : Actions : Data Processes + Session Processes + File Processes</p>
