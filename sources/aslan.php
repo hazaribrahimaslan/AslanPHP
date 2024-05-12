@@ -75,6 +75,9 @@ class aslan{
     public function title($number, $id, $class, $text){
         return "<h$number id=\"$id\" class=\"$class\">$text</h$number>";
     }
+    public function paragraph($id,$class, $text){
+        return "<p id=\"$id\" class=\"$class\">$text</p>";
+    }
     public function table($id,$class,$columns,$rows){
         return "<table></table>";
     }
