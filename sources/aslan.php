@@ -1,5 +1,8 @@
 <?php
-#AslanPHP - Developed by Hazar İbrahim Aslan
+/* AslanPHP - Open Source PHP Framework
+* Developed by Hazar İbrahim Aslan
+* Thanks : W3Schools, PHP.NET, PROTOTÜRK - Tayfun Erbilen, KODLAB - Emrah Yüksel
+* */
 class aslan{
     private $connect;
     public function database_connect(){
