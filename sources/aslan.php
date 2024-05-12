@@ -69,8 +69,11 @@ class aslan{
         $cipher = 'AES-128-ECB';
         return openssl_decrypt($data, $cipher, $key);
     }
-    public function page_create($language, $icon, $title, $body){
+    public function page($language, $icon, $title, $body){
         return "<html lang=\"$language\"><head><meta charset=\"UTF-8\"><link rel=\"icon\" type=\"image/x-icon\" href=\"$icon\"><title>$title</title><link rel=\"stylesheet\" href=\"aslan.css\"><script src=\"jquery.js\"></script><script src=\"aslan.js\"></script></head><body>$body</body></html>";
+    }
+    public function title($number, $id, $class, $text){
+        return "<h$number id=\"$id\" class=\"$class\">$text</h$number>";
     }
     public function table($id,$class,$columns,$rows){
         return "<table></table>";
